@@ -1,20 +1,21 @@
 import React from 'react'
+import Header from './Header'
+import TodoItem from './TodoItem'
+// import komponen Footer
 
-const TodoList = () => {
-    return (
+const TodoList = (props) => {
 
-        <div className="todo-list">
-            <h1>{props.title.toUpperCase()}</h1>
-            <Header title={props.title}/>
-            <ul className="list-group list-group-flush">
-                { props.items.map(item => (
-                  <li key={item.id} className="list-group-item">{/* ... */}</li>
-                  <TodoItem item={item}/>
-                        ))
-                }
-            </ul>
-        </div>
-    )
+  return (
+    <div className="todo-list">
+        <Header title={props.title} />
+        <ul className="list-group list-group-flush">
+            {props.items.map(item => (
+                <TodoItem item={item} />
+            ))}
+        </ul>
+        {/* Tambahkan komponent Footer dengan props count adalah panjang dari array todo items */}
+    </div>
+  )
 }
 
 export default TodoList

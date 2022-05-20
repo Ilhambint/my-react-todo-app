@@ -8,11 +8,7 @@ const TodoList = (props) => {
   return (
     <div className="todo-list">
         <Header title={props.title} />
-        <ul className="list-group list-group-flush">
-            {props.items.map(item => (
-                <TodoItem item={item} />
-            ))}
-        </ul>
+        <PaginateList items={props.items} initialPage={1} itemPerPage={2} />
         {/* Tambahkan komponent Footer dengan props count adalah panjang dari array todo items */}
     </div>
   )
